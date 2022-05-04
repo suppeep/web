@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./shape";
+@import "./scrollbar";
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+* {
+  cursor: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+$chips: (
+  rgb(165, 243, 251): 120px,
+  rgb(165, 243, 252): 42px,
+  rgb(165, 243, 253): 3px,
+  rgb(165, 243, 254): 4px,
+  rgb(34, 211, 255): 5px,
+);
+
+@layer components {
+  .cursor {
+    @apply fixed w-5 h-5 -m-3 z-50 rounded-full will-change-transform pointer-events-none select-none;
+  }
+  .content {
+    @apply top-0 left-0 absolute flex flex-col w-full bg-white mix-blend-soft-light;
+  }
+  .chip {
+    @apply px-4 py-3 rounded-sm drop-shadow-sm m-2;
+  }
+  .gradient-red {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-rose-600;
+  }
+}
+
+.chip {
+  @each $color, $size in $chips {
+    &.chip-#{index($chips, ($color $size))-1} {
+      background: $color;
+    }
+  }
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+}

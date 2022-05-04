@@ -1,0 +1,14 @@
+{
+  "links": [
+    {
+      "text": "LinkedIn",
+      "link": "https://www.linkedin.com/in/lukas-me/",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg"
+    },
+    {
+      "text": "Github",
+      "link": "https://github.com/suppeep",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+    }
+  ]
+}

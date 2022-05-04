@@ -1,0 +1,23 @@
+.shapes {
+  position: relative;
+  height: 100%;
+  width: 100vw;
+  background: #2128bd;
+  overflow: hidden;
+}
+
+.shape {
+  $shapes: (
+    rgb(165, 243, 252): 80px,
+    rgb(34, 211, 238): 50px,
+  );
+
+  @each $color, $size in $shapes {
+    &.shape-#{index($shapes, ($color $size))} {
+      background: $color;
+      width: $size;
+      height: $size;
+      margin: -50px;
+    }
+  }
+}
