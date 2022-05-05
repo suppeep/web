@@ -12,7 +12,7 @@
     </div>
 
     <div class="flex flex-col justify-center overflow-hidden">
-      <div class="flex justify-center flex-row mt-12">
+      <div class="flex flex-wrap justify-center flex-row mt-12">
         <div
           v-for="(item, index) in countries"
           :key="index"
@@ -24,9 +24,8 @@
 
       <div class="flex justify-center w-full">
         <canvas
-          class="text-center"
+          class="text-center w-[500px] h-[500px]"
           id="cobe"
-          style="width: 500px; height: 500px"
           width="1000"
           height="1000"
         ></canvas>
@@ -53,9 +52,8 @@ export default defineComponent({
   setup() {
     const { jsonReader } = io();
 
-    const countries = ref(["Germany", "England", "Italy", "USA", "India"]);
-
     const workText = ref(jsonReader(pageText).work);
+    const countries = ref(workText.value.countries);
 
     onMounted(() => {
       let phi = 0;

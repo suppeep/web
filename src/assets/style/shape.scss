@@ -8,8 +8,8 @@
 
 .shape {
   $shapes: (
-    rgb(165, 243, 252): 80px,
-    rgb(34, 211, 238): 50px,
+    rgb(165, 243, 252): 40px,
+    #2128bd: 20px,
   );
 
   @each $color, $size in $shapes {

@@ -6,6 +6,31 @@
     ]
   },
   "work": {
+    "countries": ["Germany", "Italy", "England", "USA", "India"],
     "title": ["Work.", "Done International."]
+  },
+  "qualities": {
+    "cards": [
+      {
+        "title": "Card 1",
+        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
+      },
+      {
+        "title": "Card 2",
+        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
+      },
+      {
+        "title": "Card 3",
+        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
+      },
+      {
+        "title": "Card 4",
+        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
+      }
+    ]
   }
 }

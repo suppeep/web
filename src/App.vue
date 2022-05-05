@@ -14,7 +14,7 @@
   <!-- main content goes here -->
   <div class="content">
     <div class="relative">
-      <div class="vertical flex fixed z-10" style="left: 80px; top: 80px">
+      <div class="vertical flex fixed z-[99]" style="left: 80px; top: 180px">
         <Links :extClass="['rotate-90']" :link="socialLinks"></Links>
         &nbsp;
 
@@ -31,7 +31,7 @@
 
       <Content
         id="personal"
-        :extClass="['flex', 'flex-row', 'h-full', 'pb-48']"
+        :extClass="['flex', 'flex-row', 'h-full', 'pb-20']"
       >
         <template v-slot:content>
           <div class="flex flex-col w-full">
@@ -42,7 +42,10 @@
 
       <hr />
 
-      <Content id="qualities" :extClass="['flex', 'flex-row']">
+      <Content
+        id="qualities"
+        :extClass="['flex', 'flex-row', 'pb-[200px]']"
+      >
         <template v-slot:content>
           <div class="flex flex-col w-full">
             <Qualities />
@@ -52,7 +55,7 @@
 
       <hr />
 
-      <Content id="work" :extClass="['flex', 'flex-row', 'py-0', 'bg-black']">
+      <Content id="work" :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']">
         <template v-slot:content>
           <div class="flex flex-col w-full">
             <Work />

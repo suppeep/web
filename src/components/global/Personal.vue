@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-[5%] px-[12%] flex flex-col relative h-full">
+  <div class="pt-[5%] px-[8%] md:px-[12%] flex flex-col relative h-full">
     <div class="text-left font-bold text-5xl md:text-6xl relative">
       <div
         v-for="(text, index) in personalText.title"
@@ -11,19 +11,12 @@
       </div>
     </div>
 
-    <div class="bg-white flex flex-col sm:flex-row py-10">
-      <ImageHolder
-        v-for="(item, index) in [1, 2, 3]"
-        :key="index"
-        :extClass="['w-full', 'md:w-1/3']"
-      ></ImageHolder>
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-5 md:gap-10 text-left">
+    <div class="flex flex-col sm:flex-row gap-5 md:gap-10 text-left py-14">
       <Text
         id="personal-subtext-0"
         class="
-          px-[10%]
+          px-[0%]
+          md:px-[6%]
           first-letter:text-6xl
           first-letter:font-bold
           first-letter:mr-3
@@ -37,9 +30,15 @@
         :text="personalText.text[0]"
       />
     </div>
+
+    <div class="bg-white flex-col sm:flex-row hidden md:flex">
+      <!-- <ImageHolder :extClass="['w-full', 'md:w-1/3', 'h-80']"></ImageHolder>
+
+      <ImageHolder :extClass="['w-full', 'md:w-1/3', 'h-80']"></ImageHolder> -->
+    </div>
   </div>
 </template>
-
+ 
 <script>
 import { ref, defineComponent, onMounted } from "vue";
 
@@ -54,6 +53,7 @@ import timeline from "../../modules/gsap/timeline";
 import pageText from "../../text/index.json";
 
 export default defineComponent({
+  components: { ImageHolder, Text },
   setup() {
     const { jsonReader } = io();
     const { createTimeline } = timeline();
@@ -62,7 +62,7 @@ export default defineComponent({
 
     onMounted(() => {
       const options = {
-        start: "top 92%",
+        start: "top 85%",
         end: "top 10%",
         scrub: 0.3,
       };
@@ -89,17 +89,16 @@ export default defineComponent({
 
       for (const item of textConfig) {
         tl.from(`#${item.id}`, {
-          x: item.from.x,
+          // x: item.from.x,
+          opacity: 0,
         }).to(`#${item.id}`, {
-          x: item.to.x,
+          // x: item.to.x,
+          opacity: 1,
         });
       }
     });
 
     return { personalText };
   },
-  components: { ImageHolder, Text },
 });
 </script>
-
-

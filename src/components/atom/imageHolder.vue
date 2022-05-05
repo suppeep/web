@@ -2,7 +2,7 @@
   <img
     :id="id"
     :src="src"
-    class="shadow-lg rounded-md m-2 z-10"
+    class="shadow-lg rounded-md m-2 z-10 bg-cover bg-center"
     :class="extClass"
   />
 </template>
