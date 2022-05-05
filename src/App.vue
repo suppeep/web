@@ -5,6 +5,12 @@
     <div class="shape will-change-transform fixed rounded-full shape-2"></div>
   </div>
 
+  <!-- background space colors -->
+  <div class="bg-space-noise"></div>
+  <div class="bg-space-red lights"></div>
+  <div class="bg-space-blue lights"></div>
+  <div class="bg-space-orange lights"></div>
+
   <!-- main content goes here -->
   <div class="content">
     <div class="relative">
