@@ -1,5 +1,5 @@
 <template>
-  <p class="text-xl font-light">{{ text }}</p>
+  <p class="text-xl font-light" :class="extClass">{{ text }}</p>
 </template>
 
 <script>
@@ -9,8 +9,8 @@ export default {
       type: String,
       required: true,
     },
-    className: {
-      type: String,
+    extClass: {
+      type: Array,
       required: false,
     },
   },

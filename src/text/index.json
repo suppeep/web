@@ -12,25 +12,49 @@
   "qualities": {
     "cards": [
       {
-        "title": "Card 1",
-        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "title": "Javascript",
+        "icon": "../../assets/images/jsSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
-        "title": "Card 2",
-        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "title": "VueJS",
+        "icon": "../../assets/images/vueSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
-        "title": "Card 3",
-        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "title": "Solidity",
+        "icon": "../../assets/images/solSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
-        "title": "Card 4",
-        "icon": "https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg",
+        "title": "Tailwind CSS",
+        "icon": "../../assets/images/tailwindSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       }
+    ],
+    "list": [
+      "CSS",
+      "HTML",
+      "Javascript",
+      "Typescript",
+      "Tailwind CSS",
+      "VueJs",
+      "NuxtJs",
+      "Solidity",
+      "Smart Contracts",
+      "Web Animations",
+      "WebGL",
+      "Docker",
+      "Git",
+      "Firebase",
+      "SCRUM"
     ]
+  },
+  "attentioner": {
+    "title": "Let's build your dream next.",
+    "subtitle": "Join the visionary style of tomorrow."
+  },
+  "tunnel": {
+   "header": "Text over image" 
   }
 }

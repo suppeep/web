@@ -2,12 +2,11 @@
   <div class="flex items-center w-full">
     <div class="w-20 h-20 relative mr-5">
       <div
-        class="absolute top-0 right-0 bg-indigo-100 rounded w-16 h-16 mt-2 mr-1"
+        class="absolute top-0 right-0 bg-white rounded w-16 h-16 mt-2 mr-1"
       ></div>
       <div
         class="
           absolute
-          text-white
           bottom-0
           left-0
           bg-gradient-to-r
@@ -42,13 +41,7 @@
       </h2>
       <p
         tabindex="0"
-        class="
-          focus:outline-none
-          text-base text-gray-600
-          dark:text-gray-200
-          leading-normal
-          pt-2
-        "
+        class="focus:outline-none text-base text-gray-400 leading-normal pt-2"
       >
         <slot name="paragraph"></slot>
       </p>

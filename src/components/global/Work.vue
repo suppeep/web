@@ -34,7 +34,6 @@
   </div>
 </template>
 
-
 <script>
 import createGlobe from "cobe";
 import { ref, defineComponent, onMounted } from "vue";

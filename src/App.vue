@@ -14,18 +14,22 @@
   <!-- main content goes here -->
   <div class="content">
     <div class="relative">
-      <div class="vertical flex fixed z-[99]" style="left: 80px; top: 180px">
-        <Links :extClass="['rotate-90']" :link="socialLinks"></Links>
-        &nbsp;
+      <div>
+        <div class="vertical flex fixed z-[99]" style="left: 80px; top: 180px">
+          <Links :extClass="['rotate-90']" :link="socialLinks"></Links>
+          &nbsp;
 
-        <h2 class="text-lg">- {{ location }},</h2>
-        &nbsp;&nbsp;
-        <h2 class="text-lg">{{ currentTime }} -</h2>
+          <h2 class="text-lg">- {{ location }},</h2>
+          &nbsp;&nbsp;
+          <h2 class="text-lg">{{ currentTime }} -</h2>
+        </div>
+
+        <SentenceMaker :items="sentences" />
+
+        <CircleOpener> </CircleOpener>
+
+        <!-- <SVGLoader name="../../assets/images/scroller.vue"></SVGLoader> -->
       </div>
-
-      <SentenceMaker :items="sentences" />
-
-      <CircleOpener> </CircleOpener>
 
       <hr />
 
@@ -42,10 +46,7 @@
 
       <hr />
 
-      <Content
-        id="qualities"
-        :extClass="['flex', 'flex-row', 'pb-[200px]']"
-      >
+      <Content id="qualities" :extClass="['flex', 'flex-row', 'pb-[200px]']">
         <template v-slot:content>
           <div class="flex flex-col w-full">
             <Qualities />
@@ -53,7 +54,7 @@
         </template>
       </Content>
 
-      <hr />
+      <hr class="pt-0.5" />
 
       <Content id="work" :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']">
         <template v-slot:content>
@@ -63,7 +64,30 @@
         </template>
       </Content>
 
-      <section style="height: 1000px"></section>
+      <hr />
+
+      <Content
+        id="attentioner"
+        :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']"
+      >
+        <template v-slot:content>
+          <div class="flex flex-col w-full">
+            <Attentioner />
+          </div>
+        </template>
+      </Content>
+
+      <hr />
+
+      <Content id="tunnel" :extClass="['flex', 'flex-row', 'bg-white', 'pt-0']">
+        <template v-slot:content>
+          <div class="flex flex-col w-full">
+            <Tunnel></Tunnel>
+          </div>
+        </template>
+      </Content>
+
+      <!-- <section style="height: 1000px"></section> -->
     </div>
   </div>
 </template>
@@ -80,12 +104,15 @@ import SentenceMaker from "./components/global/sentenceMaker.vue";
 import Links from "./components/global/links.vue";
 import Personal from "./components/global/Personal.vue";
 import Work from "./components/global/Work.vue";
+import Attentioner from "./components/global/Attentioner.vue";
+import Tunnel from "./components/global/tunnel.vue";
 
 import titleJSON from "./text/titles.json";
 import socialLinksJSON from "./text/socialLinks.json";
 
 // composition modules
 import io from "./modules/io";
+import SVGLoader from "./components/global/SVGLoader.vue";
 
 export default {
   components: {
@@ -97,6 +124,9 @@ export default {
     Personal,
     Links,
     Work,
+    Attentioner,
+    Tunnel,
+    SVGLoader,
   },
   setup() {
     const { jsonReader } = io();
