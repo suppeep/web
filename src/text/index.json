@@ -13,22 +13,22 @@
     "cards": [
       {
         "title": "Javascript",
-        "icon": "../../assets/images/jsSVG.vue",
+        "icon": "../svg/jsSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
         "title": "VueJS",
-        "icon": "../../assets/images/vueSVG.vue",
+        "icon": "../svg/vueSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
         "title": "Solidity",
-        "icon": "../../assets/images/solSVG.vue",
+        "icon": "../svg/solSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
         "title": "Tailwind CSS",
-        "icon": "../../assets/images/tailwindSVG.vue",
+        "icon": "../svg/tailwindSVG.vue",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       }
     ],
@@ -55,6 +55,6 @@
     "subtitle": "Join the visionary style of tomorrow."
   },
   "tunnel": {
-   "header": "Text over image" 
+    "header": "Text over image"
   }
 }
