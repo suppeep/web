@@ -3,7 +3,7 @@
     <svg
       id="svg"
       class="relative top-0 left-0 w-full"
-      style="z-index: 99999999; height: 1000px"
+      style="z-index: 999999999; height: 100vh"
     >
       <defs>
         <radialGradient id="darkGradient">
@@ -21,6 +21,10 @@
         r="120"
         fill="url(#darkGradient)"
       />
+
+      <text x="50%" y="90%" fill="#fff" class="text-lg">
+        {{ eastereggText }}
+      </text>
     </svg>
 
     <div id="img">
@@ -30,12 +34,22 @@
 </template>
 
 <script>
+import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { onMounted } from "vue";
+import { Draggable } from "gsap/Draggable";
+
+// text
+import pageTextJSON from "../../text/index.json";
+
+// composition modules
+import io from "../../modules/io";
 
 export default {
   setup() {
+    const { jsonReader } = io();
+    const eastereggText = ref(jsonReader(pageTextJSON).easteregg);
+
     onMounted(() => {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -111,7 +125,20 @@ export default {
 
         ScrollTrigger.refresh();
       }
+
+      // create draggable circle
+      gsap.registerPlugin(Draggable);
+
+      gsap.set("#rectDiv", { transformOrigin: "50% 50%" });
+
+      Draggable.create("#rectDiv", {
+        type: "x,y",
+        overshootTolerance: 0,
+        inertia: true,
+      });
     });
+
+    return { eastereggText };
   },
 };
 </script>

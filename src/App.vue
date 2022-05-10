@@ -28,7 +28,9 @@
 
         <CircleOpener> </CircleOpener>
 
-        <!-- <SVGLoader name="../../assets/images/scroller.vue"></SVGLoader> -->
+        <!-- <div class="relative">
+          <SVGLoader name="../atom/scroller.vue"></SVGLoader>
+        </div> -->
       </div>
 
       <hr />
@@ -54,7 +56,7 @@
         </template>
       </Content>
 
-      <hr class="pt-0.5" />
+      <hr />
 
       <Content id="work" :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']">
         <template v-slot:content>
@@ -79,13 +81,13 @@
 
       <hr />
 
-      <Content id="tunnel" :extClass="['flex', 'flex-row', 'bg-white', 'pt-0']">
+      <!-- <Content id="tunnel" :extClass="['flex', 'flex-row', 'bg-white', 'pt-0']">
         <template v-slot:content>
           <div class="flex flex-col w-full">
             <Tunnel></Tunnel>
           </div>
         </template>
-      </Content>
+      </Content> -->
 
       <!-- <section style="height: 1000px"></section> -->
     </div>
