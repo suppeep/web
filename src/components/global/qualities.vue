@@ -37,9 +37,16 @@
         </Card>
       </div>
 
-      <div class="pt-[5%] px-[12%] grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="pt-[5%] px-[12%] grid grid-cols-2 md:grid-cols-4 gap-4">
         <div
-          class="text-gray-400 justify-center flex items-center q-list"
+          class="
+            text-gray-400
+            justify-left
+            md:justify-center
+            flex
+            items-center
+            q-list
+          "
           v-for="(item, index) in qualitiesText.list"
           :key="index"
           :class="`q-list-${index}`"

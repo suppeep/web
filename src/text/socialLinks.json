@@ -9,6 +9,16 @@
       "text": "Github",
       "link": "https://github.com/suppeep",
       "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+    },
+    {
+      "text": "Gitbook",
+      "link": "https://lukas-10.gitbook.io/notizy/",
+      "src": "📜"
+    },
+    {
+      "text": "Dev.to",
+      "link": "https://dev.to/lukasw12v",
+      "src": "https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
     }
   ]
 }

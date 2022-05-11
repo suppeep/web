@@ -15,22 +15,21 @@
   <div class="content">
     <div class="relative">
       <div>
-        <div class="vertical flex fixed z-[99]" style="left: 80px; top: 180px">
-          <Links :extClass="['rotate-90']" :link="socialLinks"></Links>
+        <!-- <div class="vertical  fixed z-[99]" style="left: 80px; top: 180px">
+          <Links
+            :extClass="['rotate-90']"
+            :link="socialLinks.slice(0, 2)"
+          ></Links>
           &nbsp;
 
           <h2 class="text-lg">- {{ location }},</h2>
           &nbsp;&nbsp;
           <h2 class="text-lg">{{ currentTime }} -</h2>
-        </div>
+        </div> -->
 
         <SentenceMaker :items="sentences" />
 
         <CircleOpener> </CircleOpener>
-
-        <!-- <div class="relative">
-          <SVGLoader name="../atom/scroller.vue"></SVGLoader>
-        </div> -->
       </div>
 
       <hr />
@@ -78,18 +77,6 @@
           </div>
         </template>
       </Content>
-
-      <hr />
-
-      <!-- <Content id="tunnel" :extClass="['flex', 'flex-row', 'bg-white', 'pt-0']">
-        <template v-slot:content>
-          <div class="flex flex-col w-full">
-            <Tunnel></Tunnel>
-          </div>
-        </template>
-      </Content> -->
-
-      <!-- <section style="height: 1000px"></section> -->
     </div>
   </div>
 </template>
@@ -107,8 +94,9 @@ import Links from "./components/global/links.vue";
 import Personal from "./components/global/Personal.vue";
 import Work from "./components/global/Work.vue";
 import Attentioner from "./components/global/Attentioner.vue";
-import Tunnel from "./components/global/tunnel.vue";
+import Setup from "./components/global/setup.vue";
 
+// text
 import titleJSON from "./text/titles.json";
 import socialLinksJSON from "./text/socialLinks.json";
 
@@ -127,8 +115,8 @@ export default {
     Links,
     Work,
     Attentioner,
-    Tunnel,
     SVGLoader,
+    Setup,
   },
   setup() {
     const { jsonReader } = io();

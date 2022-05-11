@@ -1,13 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import "./shape";
 @import "./scrollbar";
 @import "./space";
 @import "material-icons/iconfont/material-icons.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Fira Code", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -38,7 +41,7 @@ body {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-indigo-600;
   }
   .gradient-yellow {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-yellow-600;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-indigo-300;
   }
 }
 
