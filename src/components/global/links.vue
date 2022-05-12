@@ -6,6 +6,7 @@
     :src="link.src"
     :text="link.text"
     :extClass="extClass"
+    :id="`links-${index}`"
   ></Social>
 </template>
 

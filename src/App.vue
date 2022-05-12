@@ -15,17 +15,17 @@
   <div class="content">
     <div class="relative">
       <div>
-        <!-- <div class="vertical  fixed z-[99]" style="left: 80px; top: 180px">
+        <div class="vertical flex fixed z-[99]" style="left: 80px; top: 180px">
           <Links
             :extClass="['rotate-90']"
             :link="socialLinks.slice(0, 2)"
           ></Links>
           &nbsp;
 
-          <h2 class="text-lg">- {{ location }},</h2>
+          <h2 class="text-lg" id="link-0">- {{ location }},</h2>
           &nbsp;&nbsp;
-          <h2 class="text-lg">{{ currentTime }} -</h2>
-        </div> -->
+          <h2 class="text-lg" id="link-1">{{ currentTime }} -</h2>
+        </div>
 
         <SentenceMaker :items="sentences" />
 
@@ -144,23 +144,28 @@ export default {
         });
       });
 
-      const verticals = gsap.utils.toArray(".vertical h2");
+      const verticals = gsap.utils.toArray(".vertical");
 
-      verticals.forEach((item) => {
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: "#qualities",
-              start: "top top",
-              end: "bottom bottom",
-              scrub: 0.2,
-              markers: false,
-            },
-          })
-          .to(item, {
-            color: "#fff",
-          });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#qualities",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.2,
+          markers: false,
+        },
       });
+
+      for (const item of verticals[0].children) {
+        tl.to(`#${item.id}`, {
+          onStart: (Y) => {
+            item.style.filter = "invert(1)";
+          },
+          onReverseComplete: (Y) => {
+            item.style.filter = "invert(0)";
+          },
+        });
+      }
     });
 
     return {

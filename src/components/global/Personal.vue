@@ -12,7 +12,7 @@
     </div>
 
     <div class="flex flex-col sm:flex-row gap-5 md:gap-10 text-left py-14">
-      <Text
+      <p
         id="personal-subtext-0"
         class="
           px-[0%]
@@ -21,13 +21,19 @@
           first-letter:font-bold
           first-letter:mr-3
           first-letter:float-left
+          w-full
+          text-xl
+          font-light
         "
-        :text="personalText.text[0]"
-      />
+      >
+        {{ personalText.text[0] }}<br />
+        {{ personalText.text[1] }}<br />
+        {{ personalText.text[2] }}
+      </p>
       <Text
         id="personal-subtext-1"
-        class="px-[1%]"
-        :text="personalText.text[0]"
+        class="px-[1%] w-full"
+        :text="personalText.text[3]"
       />
     </div>
 
@@ -38,7 +44,7 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 import { ref, defineComponent, onMounted } from "vue";
 

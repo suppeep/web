@@ -2,7 +2,10 @@
   "personal": {
     "title": ["Get Ready", "Longer Text", "Text to show gradient color"],
     "text": [
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et"
+      "Lukas, 21. Loves cats and code.",
+      "He started with just 17 years to accomplish his dream to work as a freelancer and co-entrepreneur.",
+      "Over the years he worked around the world for startups and small businesses. Gained experience in $Design, $Code and professional $team work.",
+      "Lukas is known for his work. Trusted with extraordinary work along the beauty of code to create projects people love. In many ways he has groundbreaking knowledge of the most important features of code."
     ]
   },
   "work": {
@@ -53,9 +56,6 @@
   "attentioner": {
     "title": "Let's build your dream next.",
     "subtitle": "Join the visionary style of tomorrow."
-  },
-  "tunnel": {
-    "header": "Text over image"
   },
   "easteregg": "Easter Egg"
 }
