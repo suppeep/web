@@ -15,16 +15,17 @@
   <div class="content">
     <div class="relative">
       <div>
-        <div class="vertical flex fixed z-[99]" style="left: 80px; top: 180px">
-          <Links
-            :extClass="['rotate-90']"
-            :link="socialLinks.slice(0, 2)"
-          ></Links>
-          &nbsp;
+        <div class="flex fixed z-[99]" style="left: 80px; top: 80px">
+          <img id="logo" class="h-20 w-20 rounded-md" src="./assets/images/logo.png" />
+        </div>
 
-          <h2 class="text-lg" id="link-0">- {{ location }},</h2>
+        <div
+          class="vertical flex fixed z-[99]"
+          style="left: 80px; bottom: 80px"
+        >
+          <h2 class="text-md" id="link-0">- {{ location }},</h2>
           &nbsp;&nbsp;
-          <h2 class="text-lg" id="link-1">{{ currentTime }} -</h2>
+          <h2 class="text-md" id="link-1">{{ currentTime }} -</h2>
         </div>
 
         <SentenceMaker :items="sentences" />
@@ -51,6 +52,16 @@
         <template v-slot:content>
           <div class="flex flex-col w-full">
             <Qualities />
+          </div>
+        </template>
+      </Content>
+
+      <hr />
+
+      <Content id="work" :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']">
+        <template v-slot:content>
+          <div class="flex flex-col w-full">
+            <Projects username="suppeep" />
           </div>
         </template>
       </Content>
@@ -103,6 +114,7 @@ import socialLinksJSON from "./text/socialLinks.json";
 // composition modules
 import io from "./modules/io";
 import SVGLoader from "./components/global/SVGLoader.vue";
+import Projects from "./components/global/projects.vue";
 
 export default {
   components: {
@@ -117,6 +129,7 @@ export default {
     Attentioner,
     SVGLoader,
     Setup,
+    Projects,
   },
   setup() {
     const { jsonReader } = io();
@@ -166,6 +179,15 @@ export default {
           },
         });
       }
+
+      tl.to("#logo", {
+        onStart: (Y) => {
+          document.querySelector("#logo").style.filter = "invert(1)";
+        },
+        onReverseComplete: (Y) => {
+          document.querySelector("#logo").style.filter = "invert(0)";
+        },
+      })
     });
 
     return {

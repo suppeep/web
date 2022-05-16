@@ -16,7 +16,7 @@
         <div
           v-for="(item, index) in countries"
           :key="index"
-          class="text-white/40 text-lg px-4 py-2 m-3 bg-gray-800 rounded-sm"
+          class="text-lg px-4 py-2 m-3 bg-[#23283b] text-gray-400 rounded-sm"
         >
           {{ item }}
         </div>

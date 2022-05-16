@@ -33,8 +33,7 @@
           text-lg
           font-bold
           leading-tight
-          text-gray-800
-          dark:text-white
+          text-gray-200
         "
       >
         {{ title }}

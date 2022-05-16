@@ -10,7 +10,7 @@
     <div class="flex flex-col pt-[3%] justify-center">
       <p class="text-xl text-gray-500">
         Contact me under
-        <a class="underline" href="lukas.kreutzer101@gmail.com"
+        <a class="underline" href="mailto:lukas.kreutzer101@gmail.com"
           >lukas.kreutzer101@gmail.com</a
         >
       </p>
