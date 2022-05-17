@@ -100,6 +100,16 @@
 
       <hr />
 
+      <Content id="setup" :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']">
+        <template v-slot:content>
+          <div class="flex flex-col w-full">
+            <Setup />
+          </div>
+        </template>
+      </Content>
+
+      <hr />
+
       <Content id="work" :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']">
         <template v-slot:content>
           <div class="flex flex-col w-full">
@@ -139,6 +149,8 @@ import Work from "./components/global/Work.vue";
 import Attentioner from "./components/global/Attentioner.vue";
 import SVGLoader from "./components/global/SVGLoader.vue";
 import Projects from "./components/global/projects.vue";
+import Navigation from "./components/global/Navigation.vue";
+import Setup from './components/global/setup.vue';
 
 // text
 import titleJSON from "./text/titles.json";
@@ -146,7 +158,6 @@ import socialLinksJSON from "./text/socialLinks.json";
 
 // composition modules
 import io from "./modules/io";
-import Navigation from "./components/global/Navigation.vue";
 
 export default {
   components: {
@@ -162,7 +173,8 @@ export default {
     SVGLoader,
     Projects,
     Navigation,
-  },
+    Setup
+},
   setup() {
     const { jsonReader } = io();
 

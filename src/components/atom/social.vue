@@ -1,6 +1,6 @@
 <template>
   <a :class="extClass" class="h-6 w-6 my-1.5" :href="link" target="_blank">
-    <img v-if="isImg" :src="src" />
+    <img alt="img" v-if="isImg" :src="src" />
     <p v-else>{{ src }}</p></a
   >
 </template>

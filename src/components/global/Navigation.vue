@@ -2,13 +2,14 @@
   <div>
     <img
       id="logo"
+      alt="logo"
       class="h-20 w-20 rounded-md"
       src="../../assets/images/logo.png"
     />
   </div>
   <ul class="w-8/12 flex items-center justify-end space-x-8 nav">
     <li
-      v-for="(item, index) in ['Personal', 'Qualities', 'Projects', 'Contact']"
+      v-for="(item, index) in ['Personal', 'Qualities', 'Projects', 'Setup', 'Contact']"
       :key="index"
       :id="`nav-item-${index}`"
     >

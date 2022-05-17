@@ -44,10 +44,46 @@
       />
     </div>
 
-    <div class="bg-white flex-col sm:flex-row hidden md:flex">
-      <!-- <ImageHolder :extClass="['w-full', 'md:w-1/3', 'h-80']"></ImageHolder>
-
-      <ImageHolder :extClass="['w-full', 'md:w-1/3', 'h-80']"></ImageHolder> -->
+    <div
+      class="
+        bg-white
+        flex-col
+        sm:flex-row
+        md:flex
+        translate-y-[100px]
+        md:translate-y-[400px]
+      "
+      id="personal-images"
+    >
+      <div class="w-full md:w-1/3 grid place-items-center">
+        <img
+          src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="tailwind logo"
+          class="rounded-xl"
+        />
+      </div>
+      <div
+        class="
+          w-full
+          md:w-1/3
+          translate-y-32 translate-x-12
+          grid
+          place-items-center
+        "
+      >
+        <img
+          src="../../assets/images/lukas_kreutzer.jpg"
+          alt="tailwind logo"
+          class="rounded-xl sepia"
+        />
+      </div>
+      <div class="w-full md:w-1/3 grid place-items-center">
+        <img
+          src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="tailwind logo"
+          class="rounded-xl"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -90,6 +126,10 @@ export default defineComponent({
 
       tl.to("#eve", {
         y: -620,
+      });
+
+      tl.to("#personal-images", {
+        y: -220,
       });
     });
 

@@ -12,6 +12,13 @@
     </div>
 
     <div class="flex flex-col justify-center overflow-hidden">
+      <div class="pt-6 flex justify-center">
+        <Text
+          text="Around the world, on three continents, Lukas is well known by companies for his work and understanding to create the most powerful solutions and to keep teams on the right track."
+          :extClass="['text-gray-500', 'w-1/2']"
+        />
+      </div>
+
       <div class="flex flex-wrap justify-center flex-row mt-12">
         <div
           v-for="(item, index) in countries"
@@ -39,6 +46,7 @@ import createGlobe from "cobe";
 import { ref, defineComponent, onMounted } from "vue";
 
 import Title from "../atom/title.vue";
+import Text from "../atom/text.vue";
 
 // composition modules
 import io from "../../modules/io";
@@ -47,7 +55,7 @@ import io from "../../modules/io";
 import pageText from "../../text/index.json";
 
 export default defineComponent({
-  components: { Title },
+  components: { Title, Text },
   setup() {
     const { jsonReader } = io();
 
