@@ -21,7 +21,7 @@
 
       <div class="flex flex-row justify-center mt-[3%]">
         <Links
-          :extClass="['text-white', 'h-8', 'w-8', 'mx-3', 'invert']"
+          :extClass="['h-8', 'w-8', 'mx-3', 'invert']"
           :link="socialLinks"
         ></Links>
       </div>

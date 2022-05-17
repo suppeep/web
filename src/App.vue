@@ -15,14 +15,31 @@
   <div class="content">
     <div class="relative">
       <div>
-        <div class="flex fixed z-[99]" style="left: 80px; top: 80px">
-          <img id="logo" class="h-20 w-20 rounded-md" src="./assets/images/logo.png" />
+        <div
+          class="
+            flex
+            justify-between
+            fixed
+            z-[99]
+            w-full
+            pr-[15%]
+            top-[50px]
+            left-[80px]
+          "
+        >
+          <img
+            id="logo"
+            class="h-20 w-20 rounded-md"
+            src="./assets/images/logo.png"
+          />
+
+          <!-- Navigation -->
+          <div class="container mx-auto flex items-center justify-end">
+            <Navigation />
+          </div>
         </div>
 
-        <div
-          class="vertical flex fixed z-[99]"
-          style="left: 80px; bottom: 80px"
-        >
+        <div class="vertical flex fixed z-[99] bottom-[50px] left-[80px]">
           <h2 class="text-md" id="link-0">- {{ location }},</h2>
           &nbsp;&nbsp;
           <h2 class="text-md" id="link-1">{{ currentTime }} -</h2>
@@ -58,7 +75,10 @@
 
       <hr />
 
-      <Content id="work" :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']">
+      <Content
+        id="projects"
+        :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']"
+      >
         <template v-slot:content>
           <div class="flex flex-col w-full">
             <Projects username="suppeep" />
@@ -79,7 +99,7 @@
       <hr />
 
       <Content
-        id="attentioner"
+        id="contact"
         :extClass="['flex', 'flex-row', 'pb-32', 'bg-black']"
       >
         <template v-slot:content>
@@ -106,6 +126,8 @@ import Personal from "./components/global/Personal.vue";
 import Work from "./components/global/Work.vue";
 import Attentioner from "./components/global/Attentioner.vue";
 import Setup from "./components/global/setup.vue";
+import SVGLoader from "./components/global/SVGLoader.vue";
+import Projects from "./components/global/projects.vue";
 
 // text
 import titleJSON from "./text/titles.json";
@@ -113,8 +135,7 @@ import socialLinksJSON from "./text/socialLinks.json";
 
 // composition modules
 import io from "./modules/io";
-import SVGLoader from "./components/global/SVGLoader.vue";
-import Projects from "./components/global/projects.vue";
+import Navigation from "./components/global/Navigation.vue";
 
 export default {
   components: {
@@ -130,6 +151,7 @@ export default {
     SVGLoader,
     Setup,
     Projects,
+    Navigation,
   },
   setup() {
     const { jsonReader } = io();
@@ -187,7 +209,7 @@ export default {
         onReverseComplete: (Y) => {
           document.querySelector("#logo").style.filter = "invert(0)";
         },
-      })
+      });
     });
 
     return {

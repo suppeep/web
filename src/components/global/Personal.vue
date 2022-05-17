@@ -26,14 +26,18 @@
           font-light
         "
       >
-        {{ personalText.text[0] }}<br />
-        {{ personalText.text[1] }}<br />
-        {{ personalText.text[2] }}
+        <Highlighter
+          highlightClassName="gradient-red"
+          :searchWords="keywords"
+          :autoEscape="true"
+          :textToHighlight="personalText.text[0]"
+        />
       </p>
+
       <Text
         id="personal-subtext-1"
         class="px-[1%] w-full"
-        :text="personalText.text[3]"
+        :text="personalText.text[1]"
       />
     </div>
 
@@ -47,6 +51,7 @@
 
 <script>
 import { ref, defineComponent, onMounted } from "vue";
+import Highlighter from "vue-highlight-words";
 
 import Text from "../atom/text.vue";
 import ImageHolder from "../atom/imageHolder.vue";
@@ -57,14 +62,19 @@ import timeline from "../../modules/gsap/timeline";
 
 // text
 import pageText from "../../text/index.json";
+import { computed } from "@vue/reactivity";
 
 export default defineComponent({
-  components: { ImageHolder, Text },
+  components: { ImageHolder, Text, Highlighter },
   setup() {
     const { jsonReader } = io();
     const { createTimeline } = timeline();
 
     const personalText = ref(jsonReader(pageText).personal);
+
+    const keywords = computed(() => {
+      return ["$Code", "$Design", "$Teamwork"];
+    });
 
     onMounted(() => {
       const options = {
@@ -104,7 +114,7 @@ export default defineComponent({
       }
     });
 
-    return { personalText };
+    return { personalText, keywords };
   },
 });
 </script>

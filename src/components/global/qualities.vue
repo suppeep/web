@@ -166,7 +166,7 @@ export default defineComponent({
 }
 
 $qualities: 14;
-@for $i from 1 through $qualities {
+@for $i from 0 through $qualities {
   .q-list-#{$i}:hover {
     color: rgb(34, 211, 255);
   }

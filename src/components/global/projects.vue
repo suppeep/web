@@ -5,10 +5,20 @@
       <Title text="Projects" extClass="gradient-green pb-16" />
     </div>
 
-    <div class="px-[12%] grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+    <div
+      class="
+        px-[12%]
+        grid grid-cols-1
+        md:grid-cols-3
+        gap-4
+        h-full
+        project-cards
+      "
+    >
       <div
-        v-for="(item, index) in githubRepoData"
+        v-for="(item, index) in githubRepoData.slice(0, 6)"
         :key="index"
+        :id="`project-card-${index}`"
         class="
           max-w-full
           mx-4
@@ -87,12 +97,22 @@
         </div>
       </div>
     </div>
+
+    <div v-if="githubRepoData.length > 5" class="mt-10">
+      <Btn text="See more" />
+    </div>
   </div>
 </template>
 
 <script>
 import { ref, onMounted, defineComponent } from "vue";
+import gsap from "gsap";
+
 import Title from "../atom/title.vue";
+import Btn from "../atom/button.vue";
+
+// composition modules
+import timeline from "../../modules/gsap/timeline";
 
 export default defineComponent({
   props: {
@@ -103,9 +123,12 @@ export default defineComponent({
   },
   components: {
     Title,
+    Btn,
   },
   setup(props) {
     let githubRepoData = ref([]);
+
+    const { createTimeline } = timeline();
 
     const getGithubRepo = async () =>
       await fetch(
@@ -114,6 +137,27 @@ export default defineComponent({
 
     onMounted(async () => {
       githubRepoData.value = await (await getGithubRepo()).json();
+
+      const options = {
+        start: "top +=50%",
+        end: "+=600vh",
+        scrub: 0.3,
+        pin: false,
+      };
+
+      // config for cards
+      const cards = gsap.utils.toArray(".project-cards");
+      const tl = createTimeline("#projects", options);
+
+      cards.forEach((el) => {
+        tl.from(el, {
+          y: 200,
+          opacity: 0,
+        }).to(el, {
+          y: 0,
+          opacity: 1,
+        });
+      });
     });
 
     return {
@@ -122,3 +166,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+#github:hover {
+  fill: url("#githubLogoHover");
+}
+</style>
