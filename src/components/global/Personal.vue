@@ -1,5 +1,8 @@
 <template>
-  <div class="pt-[5%] px-[8%] md:px-[12%] flex flex-col relative h-full">
+  <div
+    class="pt-[5%] px-[8%] md:px-[12%] flex flex-col relative h-full"
+    id="eve"
+  >
     <div class="text-left font-bold text-5xl md:text-6xl relative">
       <div
         v-for="(text, index) in personalText.title"
@@ -85,33 +88,9 @@ export default defineComponent({
 
       const tl = createTimeline("#personal", options);
 
-      const textConfig = [
-        {
-          id: "personal-text-0",
-          from: { x: "-100vw", y: 0 },
-          to: { x: 0, y: 0 },
-        },
-        {
-          id: "personal-text-1",
-          from: { x: "-100vw", y: 0 },
-          to: { x: 0, y: 0 },
-        },
-        {
-          id: "personal-text-2",
-          from: { x: "-100vw", y: 0 },
-          to: { x: 0, y: 0 },
-        },
-      ];
-
-      // for (const item of textConfig) {
-      //   tl.from(`#${item.id}`, {
-      //     // x: item.from.x,
-      //     opacity: 0,
-      //   }).to(`#${item.id}`, {
-      //     // x: item.to.x,
-      //     opacity: 1,
-      //   });
-      // }
+      tl.to("#eve", {
+        y: -620,
+      });
     });
 
     return { personalText, keywords };

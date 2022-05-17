@@ -1,8 +1,6 @@
 {
   "titles": [
     { "text": "Lukas Kreutzer", "id": "openerText" },
-    { "text": "Developer", "id": "openerTextCoder" },
-    { "text": "Designer", "id": "openerText3" },
-    { "text": "Text3", "id": "openerText4" }
+    { "text": "Developer & Designer", "id": "openerTextCoder" }
   ]
 }

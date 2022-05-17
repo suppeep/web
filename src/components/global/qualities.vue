@@ -91,7 +91,7 @@ export default defineComponent({
     onMounted(() => {
       const animation = gsap.fromTo(
         "#quality-section",
-        { autoAlpha: 0, y: 150 },
+        { autoAlpha: 0, y: 300 },
         { duration: 1, autoAlpha: 1, y: 0 }
       );
       const scrollFormTo = createTimelineFromTo("#quality-section", animation);
