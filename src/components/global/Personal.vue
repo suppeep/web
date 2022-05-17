@@ -103,15 +103,15 @@ export default defineComponent({
         },
       ];
 
-      for (const item of textConfig) {
-        tl.from(`#${item.id}`, {
-          // x: item.from.x,
-          opacity: 0,
-        }).to(`#${item.id}`, {
-          // x: item.to.x,
-          opacity: 1,
-        });
-      }
+      // for (const item of textConfig) {
+      //   tl.from(`#${item.id}`, {
+      //     // x: item.from.x,
+      //     opacity: 0,
+      //   }).to(`#${item.id}`, {
+      //     // x: item.to.x,
+      //     opacity: 1,
+      //   });
+      // }
     });
 
     return { personalText, keywords };

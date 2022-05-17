@@ -14,3 +14,14 @@
   border-radius: 10px;
   -webkit-border-radius: 10px;
 }
+
+#scroller-wall::-webkit-scrollbar {
+  height: 0;
+  background: transparent !important;
+}
+
+#scroller-wall::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+}

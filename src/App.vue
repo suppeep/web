@@ -8,47 +8,44 @@
   <!-- background space colors -->
   <div class="bg-space-noise"></div>
   <div class="bg-space-red lights"></div>
-  <div class="bg-space-blue lights"></div>
   <div class="bg-space-orange lights"></div>
+  <div class="bg-space-blue lights"></div>
 
   <!-- main content goes here -->
   <div class="content">
     <div class="relative">
-      <div>
-        <div
-          class="
-            flex
-            justify-between
-            fixed
-            z-[99]
-            w-full
-            pr-[15%]
-            top-[50px]
-            left-[80px]
-          "
-        >
-          <img
-            id="logo"
-            class="h-20 w-20 rounded-md"
-            src="./assets/images/logo.png"
-          />
-
-          <!-- Navigation -->
-          <div class="container mx-auto flex items-center justify-end">
-            <Navigation />
-          </div>
-        </div>
-
-        <div class="vertical flex fixed z-[99] bottom-[50px] left-[80px]">
-          <h2 class="text-md" id="link-0">- {{ location }},</h2>
-          &nbsp;&nbsp;
-          <h2 class="text-md" id="link-1">{{ currentTime }} -</h2>
-        </div>
-
-        <SentenceMaker :items="sentences" />
-
-        <CircleOpener> </CircleOpener>
+      <div
+        class="
+          flex
+          justify-between
+          fixed
+          z-[99]
+          w-full
+          pr-[15%]
+          top-[50px]
+          left-[80px]
+        "
+      >
+        <Navigation />
       </div>
+
+      <div class="vertical flex fixed z-[99] bottom-[50px] left-[80px]">
+        <h2 class="text-md" id="link-0">- {{ location }},</h2>
+        &nbsp;&nbsp;
+        <h2 class="text-md" id="link-1">{{ currentTime }} -</h2>
+      </div>
+
+      <Content id="opener" :extClass="['flex', 'flex-col', 'pt-0', 'pb-0']">
+        <template v-slot:content>
+          <div class="flex flex-row justify-between w-full pt-[13%] px-[22%]">
+            <CircleOpener> </CircleOpener>
+
+            <div class="w-1/2 flex flex-col">
+              <SentenceMaker :items="sentences" />
+            </div>
+          </div>
+        </template>
+      </Content>
 
       <hr />
 
@@ -65,7 +62,10 @@
 
       <hr />
 
-      <Content id="qualities" :extClass="['flex', 'flex-row', 'pb-[200px]']">
+      <Content
+        id="qualities"
+        :extClass="['flex', 'flex-row', 'pb-[200px]', 'bg-black']"
+      >
         <template v-slot:content>
           <div class="flex flex-col w-full">
             <Qualities />
@@ -184,29 +184,28 @@ export default {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#qualities",
-          start: "top top",
+          start: "bottom bottom",
           end: "bottom bottom",
           scrub: 0.2,
-          markers: false,
         },
       });
 
       for (const item of verticals[0].children) {
         tl.to(`#${item.id}`, {
-          onStart: (Y) => {
+          onStart: () => {
             item.style.filter = "invert(1)";
           },
-          onReverseComplete: (Y) => {
+          onReverseComplete: () => {
             item.style.filter = "invert(0)";
           },
         });
       }
 
       tl.to("#logo", {
-        onStart: (Y) => {
+        onStart: () => {
           document.querySelector("#logo").style.filter = "invert(1)";
         },
-        onReverseComplete: (Y) => {
+        onReverseComplete: () => {
           document.querySelector("#logo").style.filter = "invert(0)";
         },
       });

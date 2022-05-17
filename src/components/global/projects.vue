@@ -10,6 +10,7 @@
         px-[12%]
         grid grid-cols-1
         md:grid-cols-3
+        lg:grid-cols-4
         gap-4
         h-full
         project-cards
@@ -98,8 +99,8 @@
       </div>
     </div>
 
-    <div v-if="githubRepoData.length > 5" class="mt-10">
-      <Btn text="See more" />
+    <div v-if="githubRepoData.length > 5" class="mt-10 md:mt-24">
+      <Btn :action="linkToGithub" text="See more" />
     </div>
   </div>
 </template>
@@ -112,7 +113,7 @@ import Title from "../atom/title.vue";
 import Btn from "../atom/button.vue";
 
 // composition modules
-import timeline from "../../modules/gsap/timeline";
+import fromto from "../../modules/gsap/fromto";
 
 export default defineComponent({
   props: {
@@ -128,40 +129,29 @@ export default defineComponent({
   setup(props) {
     let githubRepoData = ref([]);
 
-    const { createTimeline } = timeline();
+    const { createTimelineFromTo } = fromto();
 
     const getGithubRepo = async () =>
       await fetch(
         `https://api.github.com/users/${props.username}/repos?per_page=20`
       );
 
+    const linkToGithub = () => (window.location = "https://github.com/suppeep");
+
     onMounted(async () => {
       githubRepoData.value = await (await getGithubRepo()).json();
 
-      const options = {
-        start: "top +=50%",
-        end: "+=600vh",
-        scrub: 0.3,
-        pin: false,
-      };
-
-      // config for cards
-      const cards = gsap.utils.toArray(".project-cards");
-      const tl = createTimeline("#projects", options);
-
-      cards.forEach((el) => {
-        tl.from(el, {
-          y: 200,
-          opacity: 0,
-        }).to(el, {
-          y: 0,
-          opacity: 1,
-        });
-      });
+      const animation = gsap.fromTo(
+        ".project-cards",
+        { autoAlpha: 0, y: 150 },
+        { duration: 1, autoAlpha: 1, y: 0 }
+      );
+      const scrollFormTo = createTimelineFromTo(".project-cards", animation);
     });
 
     return {
       githubRepoData,
+      linkToGithub,
     };
   },
 });

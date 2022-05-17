@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col relative h-screen pt-[10%]">
+  <div class="flex flex-col relative pt-[10%]">
     <div class="px-[12%] text-left font-bold text-5xl md:text-6xl relative">
       <Title
         v-for="(text, index) in workText.title"

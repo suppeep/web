@@ -15,11 +15,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   overflow-x: hidden;
-  cursor: none;
 }
 
 * {
-  cursor: none;
+  cursor: default;
 }
 
 body {

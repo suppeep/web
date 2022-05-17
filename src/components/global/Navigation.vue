@@ -1,12 +1,20 @@
 <template>
-  <ul class="w-8/12 flex items-center justify-end space-x-8">
+  <div>
+    <img
+      id="logo"
+      class="h-20 w-20 rounded-md"
+      src="../../assets/images/logo.png"
+    />
+  </div>
+  <ul class="w-8/12 flex items-center justify-end space-x-8 nav">
     <li
       v-for="(item, index) in ['Personal', 'Qualities', 'Projects', 'Contact']"
       :key="index"
+      :id="`nav-item-${index}`"
     >
       <button
         @click="scrollToSection(item.toLocaleLowerCase())"
-        class="text-base cursor-none"
+        class="text-base cursor-none hover:text-[#22d3ff]"
       >
         {{ item }}
       </button>
@@ -17,6 +25,7 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { onMounted } from "vue";
 
 export default {
   setup() {
@@ -31,6 +40,30 @@ export default {
         },
       });
     };
+
+    onMounted(() => {
+      const navigation = gsap.utils.toArray(".nav");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#qualities",
+          start: "bottom bottom",
+          end: "bottom bottom",
+          scrub: 0.2,
+        },
+      });
+
+      for (const item of navigation[0].children) {
+        tl.to(`#${item.id}`, {
+          onStart: () => {
+            item.style.filter = "invert(1)";
+          },
+          onReverseComplete: () => {
+            item.style.filter = "invert(0)";
+          },
+        });
+      }
+    });
 
     return {
       scrollToSection,

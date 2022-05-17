@@ -1,7 +1,7 @@
 <template>
   <button
+    @click="action"
     class="
-      focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:bg-indigo-500
       hover:bg-indigo-500
       font-normal
       focus:outline-none
@@ -27,6 +27,10 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+    action: {
+      type: Function,
+      required: false,
     },
   },
 };

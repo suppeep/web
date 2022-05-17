@@ -9,18 +9,6 @@
       />
     </div>
 
-    <!-- Qualities Wall -->
-    <div class="overflow-hidden">
-      <div class="images-line flex">
-        <ImageHolder
-          v-for="(item, index) in qualities"
-          :src="item.src"
-          :key="index"
-          :extClass="['line']"
-        />
-      </div>
-    </div>
-
     <div id="quality-section">
       <div class="pt-[5%] px-[12%] grid grid-cols-1 md:grid-cols-2 gap-14">
         <Card
@@ -76,6 +64,7 @@
 
 <script>
 import gsap from "gsap";
+
 import { ref, defineComponent, onMounted } from "vue";
 
 import Title from "../atom/title.vue";
@@ -85,90 +74,51 @@ import Card from "../atom/card.vue";
 import SVGLoader from "./SVGLoader.vue";
 
 // text
-import qualitiesJSON from "../../text/qualities.json";
 import pageTextJSON from "../../text/index.json";
 
 // composition modules
 import io from "../../modules/io";
-import timeline from "../../modules/gsap/timeline";
+import fromto from "../../modules/gsap/fromto";
 
 export default defineComponent({
   components: { Card, Title, Text, ImageHolder, SVGLoader },
   setup() {
     const { jsonReader } = io();
-    const { createTimeline } = timeline();
+    const { createTimelineFromTo } = fromto();
 
-    const qualities = ref(jsonReader(qualitiesJSON).qualities);
     const qualitiesText = ref(jsonReader(pageTextJSON).qualities);
 
     onMounted(() => {
-      const options = {
-        start: "top top",
-        end: "+=600vh",
-        scrub: 0.3,
-        pin: true,
-      };
-
-      // config for images
-      const chipConfig = gsap.utils.toArray(".images-line");
-      const tl = createTimeline("#qualities", options);
-
-      tl.to("#qualities", {
-        backgroundColor: "#000",
-      });
-
-      // animation for chips
-      chipConfig.forEach((el) => {
-        tl.from(el, {
-          x: "90%",
-          opacity: 1,
-        }).to(el, {
-          x: "-100vw",
-          opacity: 1,
-        });
-      });
-
-      const tlCards = createTimeline("#quality-section", {
-        start: "top +=30%",
-        end: "bottom +=20%",
-        scrub: 0.3,
-      });
-
-      tlCards
-        .from("#quality-section", {
-          y: 500,
-          opacity: 0.3,
-        })
-        .to("#quality-section", {
-          y: 0,
-          opacity: 1,
-        });
+      const animation = gsap.fromTo(
+        "#quality-section",
+        { autoAlpha: 0, y: 150 },
+        { duration: 1, autoAlpha: 1, y: 0 }
+      );
+      const scrollFormTo = createTimelineFromTo("#quality-section", animation);
     });
 
-    return { qualities, qualitiesText };
+    return { qualitiesText };
   },
 });
 </script>
 
 <style lang="scss" scoped>
-.images-line {
-  .line {
-    background-position: 50% 50%;
-    background-size: cover;
-    flex: none;
-    height: 20vh;
-    margin: clamp(15px, 3vw, 30px);
-    width: 20vh;
-    position: relative;
-    transition: ease-in-out all 0.3s;
-    opacity: 0.8;
-  }
+.line {
+  background-position: 50% 50%;
+  background-size: cover;
+  flex: none;
+  height: 17vh;
+  margin: clamp(15px, 3vw, 30px);
+  width: 17vh;
+  position: relative;
+  transition: ease-in-out all 0.3s;
+  opacity: 0.8;
 }
 
 $qualities: 14;
 @for $i from 0 through $qualities {
   .q-list-#{$i}:hover {
-    color: rgb(34, 211, 255);
+    color: #22d3ff;
   }
 }
 </style>
