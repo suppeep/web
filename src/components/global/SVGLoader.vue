@@ -14,7 +14,7 @@ export default {
   },
   setup(props) {
     const AsyncComp = defineAsyncComponent(() =>
-      import("~/components/svg/jsSVG.vue")
+      import(/* @vite-ignore */ `../../components/svg/${props.name}.vue`)
     );
 
     return {
