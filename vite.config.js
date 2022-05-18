@@ -17,7 +17,7 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      mode: "development",
+      mode: "production",
       manifest: {
         name: "Lukas",
         short_name: "Lukas",
