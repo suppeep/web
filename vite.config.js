@@ -18,6 +18,8 @@ export default defineConfig({
     vue(),
     VitePWA({
       mode: "development",
+      filename: "sw.js",
+      strategies: "injectManifest",
       base: "/",
       srcDir: "src",
       manifest: {
@@ -49,6 +51,12 @@ export default defineConfig({
             src: "icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
+          },
+          {
+            src: "maskable_icon.png",
+            sizes: "200x200",
+            type: "image/png",
+            purpose: "any maskable",
           },
         ],
       },
