@@ -14,8 +14,9 @@ export default {
   },
   setup(props) {
     const dynamicComponent = computed(() => {
+      console.log(props.name)
       const componentName = props.name;
-      return defineAsyncComponent(() => import(/* @vite-ignore */ componentName));
+      return () => import(`@/components/dynamic/${componentName}`);
     });
 
     return {
