@@ -23,7 +23,7 @@
               <a
                 class="gradient-red"
                 target="_blank"
-                href="https://gist.github.com/suppeep/1884ce6a8fa90d0852a55bb03b399e78"
+                href="https://gist.github.com/suppeep/86c747cf8671ea284c6f208bf309c45f"
                 >my setup</a
               >
             </div>

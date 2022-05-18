@@ -1,6 +1,16 @@
 <template>
   <div class="flex flex-col relative pt-[5%]">
-    <div class="px-[8%] md:px-[12%] text-right font-bold text-5xl md:text-6xl relative">
+    <div
+      class="
+        px-[8%]
+        md:px-[12%]
+        text-right
+        font-bold
+        text-5xl
+        md:text-6xl
+        relative
+      "
+    >
       <Title id="qualities-title" text="My" extClass="gradient-red pb-1" />
       <Title
         id="qualities-title"
@@ -47,10 +57,10 @@
               bottom-0
               left-0
               rounded
-              w-10
+              w-full
+              justify-center
               h-10
               mt-2
-              text-left
             "
           >
             <span class="material-icons">check</span>
