@@ -71,11 +71,11 @@
           place-items-center
         "
       >
-        <img
+        <!-- <img
           src="../../assets/images/lukas_kreutzer.jpg"
           alt="tailwind logo"
           class="rounded-xl sepia"
-        />
+        /> -->
       </div>
       <div class="w-full md:w-1/3 grid place-items-center">
         <img

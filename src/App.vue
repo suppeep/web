@@ -206,9 +206,9 @@ export default {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#qualities",
-          start: "bottom bottom",
+          start: "top +=1000px",
           end: "bottom bottom",
-          scrub: 0.2,
+          scrub: 0.2
         },
       });
 

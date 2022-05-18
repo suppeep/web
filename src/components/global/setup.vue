@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col relative pt-[5%]">
     <div class="px-[12%] text-right font-bold text-5xl md:text-6xl relative">
-      <Title id="setup-title" text="Daily" extClass="gradient-red pb-1" />
-      <Title id="setup-title" text="Work Setup" extClass="gradient-red pb-16" />
+      <Title id="setup-title" text="Daily" extClass="gradient-yellow pb-1" />
+      <Title id="setup-title" text="Work Setup" extClass="gradient-yellow pb-16" />
     </div>
 
     <div id="quality-section">
