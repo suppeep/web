@@ -24,12 +24,12 @@
       },
       {
         "title": "Solidity",
-        "icon": "../svg/solSVG.vue",
+        "icon": "solSVG",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
         "title": "Tailwind CSS",
-        "icon": "../svg/tailwindSVG.vue",
+        "icon": "tailwindSVG",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       }
     ],

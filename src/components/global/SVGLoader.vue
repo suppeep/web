@@ -1,5 +1,5 @@
 <template>
-  <component :is="dynamicComponent" />
+  <component :is="AsyncComp" />
 </template>
 
 <script>
@@ -13,13 +13,12 @@ export default {
     },
   },
   setup(props) {
-    const dynamicComponent = computed(() => {
-      const componentName = props.name;
-      return () => import(`../svg/${componentName}.vue`);
-    });
+    const AsyncComp = defineAsyncComponent(() =>
+      import("~/components/svg/jsSVG.vue")
+    );
 
     return {
-      dynamicComponent,
+      AsyncComp,
     };
   },
 };

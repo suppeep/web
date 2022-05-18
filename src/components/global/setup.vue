@@ -9,7 +9,7 @@
       <div class="pt-[5%] px-[12%] grid grid-cols-1 gap-14">
         <div class="flex flex-col items-center">
           <div class="w-1/2 flex flex-col justify-center">
-            <SVGLoader name="../svg/vscode.vue" class="mb-5 w-full"></SVGLoader>
+            <SVGLoader name="vscode" class="mb-5 w-full"></SVGLoader>
             <Text
               :extClass="['text-gray-400']"
               text="My goal was to have the best web programming setup for visual studio code which fits my needs and is helpful in the most situations over the day without losing the focus."
@@ -55,10 +55,10 @@ import gsap from "gsap";
 
 import { ref, defineComponent, onMounted } from "vue";
 
-import Title from "../atom/title.vue";
-import Text from "../atom/text.vue";
-import ImageHolder from "../atom/imageHolder.vue";
-import Card from "../atom/card.vue";
+import Title from "~/components/atom/title.vue";
+import Text from "~/components/atom/text.vue";
+import ImageHolder from "~/components/atom/imageHolder.vue";
+import Card from "~/components/atom/card.vue";
 import SVGLoader from "./SVGLoader.vue";
 
 // text
