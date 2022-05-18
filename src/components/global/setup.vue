@@ -1,6 +1,16 @@
 <template>
   <div class="flex flex-col relative pt-[5%]">
-    <div class="px-[8%] md:px-[12%] text-right font-bold text-5xl md:text-6xl relative">
+    <div
+      class="
+        px-[8%]
+        md:px-[12%]
+        text-right
+        font-bold
+        text-5xl
+        md:text-6xl
+        relative
+      "
+    >
       <Title id="setup-title" text="Daily" extClass="gradient-yellow pb-1" />
       <Title
         id="setup-title"
@@ -47,6 +57,17 @@
                 >my Gitbook</a
               >
             </div>
+          </div>
+        </div>
+
+        <!-- coffee -->
+        <div class="flex flex-col items-center">
+          <div class="w-full md:w-1/2 flex flex-col justify-center">
+            <span class="text-4xl mb-4">☕</span>
+            <Text
+              :extClass="['text-gray-400']"
+              text="Yes, Coffee is one of my favorite drinks. I like to drink it when I'm coding or when I'm working on a project."
+            ></Text>
           </div>
         </div>
       </div>
