@@ -12,6 +12,7 @@
       />
     </div>
     <div
+      id="sparkle"
       class="sparkle bg-[#00ff99] h-8 w-8 absolute right-0 -top-8 -z-[1]"
     ></div>
   </div>

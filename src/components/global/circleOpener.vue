@@ -18,10 +18,7 @@ import { ref, computed } from "vue";
 
 export default {
   setup() {
-    const colors = ref([
-      { id: 0, hex: "" },
-      { id: 1, hex: "" },
-    ]);
+    const colors = ref([{ hex: "" }, { hex: "" }]);
 
     const randomColors = [
       "#ff0000",

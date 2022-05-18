@@ -127,11 +127,11 @@ export default defineComponent({
         const tl = createTimeline("#personal", options);
 
         tl.to("#eve", {
-          y: -620,
+          y: -420,
         });
 
         tl.to("#personal-images", {
-          y: -220,
+          y: -120,
         });
       }
     });
