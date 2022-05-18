@@ -13,8 +13,10 @@ export default {
     },
   },
   setup(props) {
-    const AsyncComp = defineAsyncComponent(() =>
-      import(/* @vite-ignore */ `../../components/svg/${props.name}.vue`)
+    const AsyncComp = computed(() =>
+      defineAsyncComponent(() =>
+        import(/* @vite-ignore */ `../../components/svg/${props.name}.vue`)
+      )
     );
 
     return {

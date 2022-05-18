@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col relative pt-[10%]">
-    <div class="px-[12%] text-left font-bold text-5xl md:text-6xl relative">
+    <div class="px-[8%] md:px-[12%] text-left font-bold text-5xl md:text-6xl relative">
       <Title
         v-for="(text, index) in workText.title"
         :id="`work-text-${index}`"
@@ -15,7 +15,7 @@
       <div class="pt-6 flex justify-center">
         <Text
           text="Around the world, on three continents, Lukas is well known by companies for his work and understanding to create the most powerful solutions and to keep teams on the right track."
-          :extClass="['text-gray-500', 'w-1/2']"
+          :extClass="['text-gray-500', 'w-full', 'md:w-1/2', 'p-3']"
         />
       </div>
 

@@ -16,19 +16,28 @@
     <div class="relative">
       <div
         class="
-          hidden
-          md:flex
+          flex
           justify-between
           fixed
           z-[99]
           w-full
-          pr-[15%]
+          pr-[1%]
+          md:pr-[15%]
           top-[50px]
-          left-[80px]
+          left-[2px]
+          md:left-[80px]
         "
         id="titlesTrigger"
       >
-        <Navigation />
+        <img
+          alt="logo"
+          class="flex md:hidden h-20 w-20 rounded-md"
+          src="./assets/images/logo.png"
+        />
+
+        <div class="hidden md:flex justify-between w-full">
+          <Navigation />
+        </div>
       </div>
 
       <div
@@ -38,7 +47,7 @@
           fixed
           z-[99]
           bottom-[50px]
-          left-[20px]
+          left-[10px]
           md:left-[80px]
         "
       >
@@ -49,10 +58,21 @@
 
       <Content id="opener" :extClass="['flex', 'flex-col', 'pt-0', 'pb-0']">
         <template v-slot:content>
-          <div class="flex flex-row justify-between w-full pt-[17%] px-[22%]">
-            <CircleOpener> </CircleOpener>
+          <div
+            class="
+              flex flex-col
+              md:flex-row
+              justify-between
+              w-full
+              pt-[4%]
+              md:pt-[17%]
+              px-[10%]
+              md:px-[22%]
+            "
+          >
+            <CircleOpener />
 
-            <div class="w-1/2 flex flex-col" id="titles">
+            <div class="w-full md:w-1/2 flex flex-col" id="titles">
               <SentenceMaker :items="sentences" />
             </div>
           </div>
@@ -63,7 +83,7 @@
 
       <Content
         id="personal"
-        :extClass="['flex', 'flex-row', 'h-full', 'pb-20']"
+        :extClass="['flex', 'flex-row', 'h-full', 'pb-20', 'pt-44']"
       >
         <template v-slot:content>
           <div class="flex flex-col w-full">
@@ -150,7 +170,7 @@ import Attentioner from "./components/global/Attentioner.vue";
 import SVGLoader from "./components/global/SVGLoader.vue";
 import Projects from "./components/global/projects.vue";
 import Navigation from "./components/global/Navigation.vue";
-import Setup from './components/global/setup.vue';
+import Setup from "./components/global/setup.vue";
 
 // text
 import titleJSON from "./text/titles.json";
@@ -173,8 +193,8 @@ export default {
     SVGLoader,
     Projects,
     Navigation,
-    Setup
-},
+    Setup,
+  },
   setup() {
     const { jsonReader } = io();
 
@@ -208,7 +228,7 @@ export default {
           trigger: "#qualities",
           start: "top +=1000px",
           end: "bottom bottom",
-          scrub: 0.2
+          scrub: 0.2,
         },
       });
 
@@ -232,18 +252,20 @@ export default {
         },
       });
 
-      const tlEve = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#titlesTrigger",
-          start: "top top",
-          end: "+=400px",
-          scrub: 0.7,
-        },
-      });
+      if (window.screen.width > 768) {
+        const tlEve = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#titlesTrigger",
+            start: "top top",
+            end: "+=400px",
+            scrub: 0.7,
+          },
+        });
 
-      tlEve.to("#titles", {
-        y: 320,
-      });
+        tlEve.to("#titles", {
+          y: 320,
+        });
+      }
     });
 
     return {

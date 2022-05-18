@@ -8,18 +8,18 @@
     />
 
     <div class="flex flex-col pt-[3%] justify-center">
-      <p class="text-xl text-gray-500">
+      <p class="text-xl text-gray-500 mt-[5%] md:mt-[1%]">
         Contact me under
         <a class="underline" href="mailto:lukas.kreutzer101@gmail.com"
           >lukas.kreutzer101@gmail.com</a
         >
       </p>
 
-      <div class="flex justify-center mt-[4%]">
+      <div class="flex justify-center mt-[10%] md:mt-[5%]">
         <hr class="w-10" />
       </div>
 
-      <div class="flex flex-row justify-center mt-[3%]">
+      <div class="flex flex-row justify-center mt-[8%] md:mt-[3%]">
         <Links
           :extClass="['h-8', 'w-8', 'mx-3', 'invert']"
           :link="socialLinks"

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col relative pt-[5%]">
-    <div class="px-[12%] text-left font-bold text-5xl md:text-6xl relative">
+    <div class="px-[8%] md:px-[12%] text-left font-bold text-5xl md:text-6xl relative">
       <Title text="My" extClass="gradient-green pb-1" />
       <Title text="Projects" extClass="gradient-green pb-16" />
     </div>

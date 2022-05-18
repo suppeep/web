@@ -1,5 +1,5 @@
 <template>
-  <section class="relative h-screen circle-opener">
+  <section class="relative h-full md:h-screen circle-opener">
     <div
       @click="generateGradient"
       class="circle"

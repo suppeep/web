@@ -46,12 +46,13 @@
 
     <div
       class="
-        bg-white
+        bg-transparent
         flex-col
         sm:flex-row
         md:flex
-        translate-y-[100px]
+        translate-y-[0px]
         md:translate-y-[400px]
+        space-y-2
       "
       id="personal-images"
     >
@@ -116,21 +117,23 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      const options = {
-        start: "top 85%",
-        end: "top 10%",
-        scrub: 0.3,
-      };
+      if (window.screen.width > 768) {
+        const options = {
+          start: "top 85%",
+          end: "top 10%",
+          scrub: 0.3,
+        };
 
-      const tl = createTimeline("#personal", options);
+        const tl = createTimeline("#personal", options);
 
-      tl.to("#eve", {
-        y: -620,
-      });
+        tl.to("#eve", {
+          y: -620,
+        });
 
-      tl.to("#personal-images", {
-        y: -220,
-      });
+        tl.to("#personal-images", {
+          y: -220,
+        });
+      }
     });
 
     return { personalText, keywords };

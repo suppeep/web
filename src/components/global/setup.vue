@@ -1,14 +1,18 @@
 <template>
   <div class="flex flex-col relative pt-[5%]">
-    <div class="px-[12%] text-right font-bold text-5xl md:text-6xl relative">
+    <div class="px-[8%] md:px-[12%] text-right font-bold text-5xl md:text-6xl relative">
       <Title id="setup-title" text="Daily" extClass="gradient-yellow pb-1" />
-      <Title id="setup-title" text="Work Setup" extClass="gradient-yellow pb-16" />
+      <Title
+        id="setup-title"
+        text="Work Setup"
+        extClass="gradient-yellow pb-16"
+      />
     </div>
 
     <div id="quality-section">
       <div class="pt-[5%] px-[12%] grid grid-cols-1 gap-14">
         <div class="flex flex-col items-center">
-          <div class="w-1/2 flex flex-col justify-center">
+          <div class="w-full md:w-1/2 flex flex-col justify-center">
             <SVGLoader name="vscode" class="mb-5 w-full"></SVGLoader>
             <Text
               :extClass="['text-gray-400']"
@@ -28,7 +32,7 @@
 
         <!-- book -->
         <div class="flex flex-col items-center">
-          <div class="w-1/2 flex flex-col justify-center">
+          <div class="w-full md:w-1/2 flex flex-col justify-center">
             <span class="text-4xl mb-4">📜</span>
             <Text
               :extClass="['text-gray-400']"
