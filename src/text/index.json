@@ -14,12 +14,12 @@
     "cards": [
       {
         "title": "Javascript",
-        "icon": "../svg/jsSVG.vue",
+        "icon": "jsSVG",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {
         "title": "VueJS",
-        "icon": "../svg/vueSVG.vue",
+        "icon": "vueSVG",
         "paragraph": "Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product"
       },
       {

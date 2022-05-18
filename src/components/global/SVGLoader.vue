@@ -14,9 +14,8 @@ export default {
   },
   setup(props) {
     const dynamicComponent = computed(() => {
-      console.log(props.name)
       const componentName = props.name;
-      return () => import(`@/components/dynamic/${componentName}`);
+      return () => import(`../svg/${componentName}.vue`);
     });
 
     return {
