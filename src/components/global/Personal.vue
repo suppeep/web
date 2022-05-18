@@ -67,16 +67,16 @@
         class="
           w-full
           md:w-1/3
-          translate-y-32 translate-x-12
+          md:translate-y-32 md:translate-x-12
           grid
           place-items-center
         "
       >
-        <!-- <img
+        <img
           src="../../assets/images/lukas_kreutzer.jpg"
           alt="tailwind logo"
           class="rounded-xl sepia"
-        /> -->
+        />
       </div>
       <div class="w-full md:w-1/3 grid place-items-center">
         <img
