@@ -18,10 +18,6 @@ export default defineConfig({
     vue(),
     VitePWA({
       mode: "development",
-      filename: "public/sw.js",
-      strategies: "injectManifest",
-      base: "/",
-      srcDir: "/",
       manifest: {
         name: "Lukas",
         short_name: "Lukas",
