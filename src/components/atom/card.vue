@@ -3,7 +3,7 @@
     <div class="w-20 h-20 relative mr-5">
       <div
         class="absolute top-0 right-0 bg-white rounded w-16 h-16 mt-2 mr-1"
-      ></div>
+      />
       <div
         class="
           absolute
@@ -22,7 +22,7 @@
           mr-3
         "
       >
-        <slot name="icon"></slot>
+        <slot name="icon" />
       </div>
     </div>
     <div class="w-10/12 text-left">
@@ -42,7 +42,7 @@
         tabindex="0"
         class="focus:outline-none text-base text-gray-400 leading-normal pt-2"
       >
-        <slot name="paragraph"></slot>
+        <slot name="paragraph" />
       </p>
     </div>
   </div>
@@ -53,9 +53,9 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Card 1",
+      default: 'Card 1',
     },
   },
   setup() {},
-};
+}
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="py-5 flex flex-wrap justify-center" :class="extClass">
-    <slot name="content"></slot>
+    <slot name="content" />
   </div>
 </template>
 
@@ -12,5 +12,5 @@ export default {
       required: false,
     },
   },
-};
+}
 </script>t

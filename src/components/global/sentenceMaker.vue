@@ -2,28 +2,28 @@
   <div class="relative">
     <div
       v-for="(item, index) in items"
-      :key="index"
       :id="item.id"
+      :key="index"
       class="z-[99]"
     >
-      <Title
+      <ContentTitle
         :text="item.text"
-        :extClass="'uppercase text-right w-full float-right'"
+        ext-class="uppercase text-right w-full float-right"
       />
     </div>
     <div
       id="sparkle"
       class="sparkle bg-[#00ff99] h-8 w-8 absolute right-0 -top-8 -z-[1]"
-    ></div>
+    />
   </div>
 </template>
 
 <script>
-import Title from "../atom/title.vue";
+import ContentTitle from '../atom/title.vue'
 
 export default {
   components: {
-    Title,
+    ContentTitle,
   },
   props: {
     items: {
@@ -33,7 +33,7 @@ export default {
   },
 
   setup() {},
-};
+}
 </script>
 
 <style scoped>

@@ -1,5 +1,7 @@
 <template>
-  <p class="text-xl font-light" :class="extClass">{{ text }}</p>
+  <p class="text-xl font-light" :class="extClass">
+    {{ text }}
+  </p>
 </template>
 
 <script>
@@ -14,5 +16,5 @@ export default {
       required: false,
     },
   },
-};
+}
 </script>

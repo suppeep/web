@@ -1,12 +1,11 @@
 <template>
   <a :class="extClass" class="h-6 w-6 my-1.5" :href="link" target="_blank">
-    <img alt="img" v-if="isImg" :src="src" />
-    <p v-else>{{ src }}</p></a
-  >
+    <img v-if="isImg" alt="img" :src="src">
+    <p v-else>{{ src }}</p></a>
 </template>
 
 <script>
-import { computed } from "@vue/runtime-core";
+import { computed } from 'vue'
 export default {
   props: {
     text: {
@@ -29,10 +28,10 @@ export default {
   },
   setup(props) {
     const isImg = computed(() => {
-      return props.src.startsWith("https") ? true : false;
-    });
+      return !!props.src.startsWith('https')
+    })
 
-    return { isImg };
+    return { isImg }
   },
-};
+}
 </script>

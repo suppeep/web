@@ -1,13 +1,13 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function () {
   ScrollTrigger.defaults({
-    toggleActions: "restart pause resume pause",
+    toggleActions: 'restart pause resume pause',
     markers: false, // help markers
-  });
+  })
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger)
 
   /**
    * create a gsap timeline
@@ -22,8 +22,8 @@ export default function () {
         trigger,
         ...options,
       },
-    });
-  };
+    })
+  }
 
-  return { createTimeline };
+  return { createTimeline }
 }

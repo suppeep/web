@@ -4,7 +4,7 @@
     :src="src"
     class="shadow-lg rounded-md m-2 z-10 bg-cover bg-center"
     :class="extClass"
-  />
+  >
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
     src: {
       type: String,
       required: false,
-      default: "https://via.placeholder.com/1920x1080",
+      default: 'https://via.placeholder.com/1920x1080',
     },
     extClass: {
       type: Array,
@@ -25,5 +25,5 @@ export default {
     },
   },
   setup() {},
-};
+}
 </script>

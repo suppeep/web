@@ -11,11 +11,11 @@
         relative
       "
     >
-      <Title id="qualities-title" text="My" extClass="gradient-red pb-1" />
-      <Title
+      <ContentTitle id="qualities-title" text="My" ext-class="gradient-red pb-1" />
+      <ContentTitle
         id="qualities-title"
         text="Qualities"
-        extClass="gradient-red pb-16"
+        ext-class="gradient-red pb-16"
       />
     </div>
 
@@ -26,10 +26,10 @@
           :key="index"
           :title="card.title"
         >
-          <template v-slot:icon>
-            <SVGLoader :name="card.icon"></SVGLoader>
+          <template #icon>
+            <SVGLoader :name="card.icon" />
           </template>
-          <template v-slot:paragraph>
+          <template #paragraph>
             {{ card.paragraph }}
           </template>
         </Card>
@@ -37,6 +37,8 @@
 
       <div class="pt-[5%] px-[12%] grid grid-cols-2 md:grid-cols-4 gap-4">
         <div
+          v-for="(item, index) in qualitiesText.list"
+          :key="index"
           class="
             text-gray-400
             justify-left
@@ -45,8 +47,6 @@
             items-center
             q-list
           "
-          v-for="(item, index) in qualitiesText.list"
-          :key="index"
           :class="`q-list-${index}`"
         >
           <div
@@ -73,43 +73,42 @@
 </template>
 
 <script>
-import gsap from "gsap";
+import gsap from 'gsap'
 
-import { ref, defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, ref } from 'vue'
 
-import Title from "../atom/title.vue";
-import Text from "../atom/text.vue";
-import ImageHolder from "../atom/imageHolder.vue";
-import Card from "../atom/card.vue";
-import SVGLoader from "./SVGLoader.vue";
+import ContentTitle from '../atom/title.vue'
+import ImageHolder from '../atom/imageHolder.vue'
+import Card from '../atom/card.vue'
 
 // text
-import pageTextJSON from "../../text/index.json";
+import pageTextJSON from '../../text/index.json'
 
 // composition modules
-import io from "../../modules/io";
-import fromto from "../../modules/gsap/fromto";
+import io from '../../modules/io'
+import fromto from '../../modules/gsap/fromto'
+import SVGLoader from './SVGLoader.vue'
 
 export default defineComponent({
-  components: { Card, Title, Text, ImageHolder, SVGLoader },
+  components: { Card, ContentTitle, ImageHolder, SVGLoader },
   setup() {
-    const { jsonReader } = io();
-    const { createTimelineFromTo } = fromto();
+    const { jsonReader } = io()
+    const { createTimelineFromTo } = fromto()
 
-    const qualitiesText = ref(jsonReader(pageTextJSON).qualities);
+    const qualitiesText = ref(jsonReader(pageTextJSON).qualities)
 
     onMounted(() => {
       const animation = gsap.fromTo(
-        "#quality-section",
+        '#quality-section',
         { autoAlpha: 0, y: 300 },
-        { duration: 1, autoAlpha: 1, y: 0 }
-      );
-      const scrollFormTo = createTimelineFromTo("#quality-section", animation);
-    });
+        { duration: 1, autoAlpha: 1, y: 0 },
+      )
+      const scrollFormTo = createTimelineFromTo('#quality-section', animation)
+    })
 
-    return { qualitiesText };
+    return { qualitiesText }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { computed, defineAsyncComponent } from "vue";
+import { computed, defineAsyncComponent } from 'vue'
 
 export default {
   props: {
@@ -15,13 +15,13 @@ export default {
   setup(props) {
     const AsyncComp = computed(() =>
       defineAsyncComponent(() =>
-        import(/* @vite-ignore */ `../../components/svg/${props.name}.vue`)
-      )
-    );
+        import(/* @vite-ignore */ `../../components/svg/${props.name}.vue`),
+      ),
+    )
 
     return {
       AsyncComp,
-    };
+    }
   },
-};
+}
 </script>

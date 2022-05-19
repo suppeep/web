@@ -1,22 +1,22 @@
 <template>
   <Social
-    v-for="(link, index) in link"
+    v-for="(link, index) in links"
+    :id="`links-${index}`"
     :key="index"
     :link="link.link"
     :src="link.src"
     :text="link.text"
-    :extClass="extClass"
-    :id="`links-${index}`"
-  ></Social>
+    :ext-class="extClass"
+  />
 </template>
 
 <script>
-import Social from "../atom/social.vue";
+import Social from '../atom/social.vue'
 
 export default {
   components: { Social },
   props: {
-    link: {
+    links: {
       type: Array,
       required: true,
     },
@@ -25,5 +25,5 @@ export default {
       required: false,
     },
   },
-};
+}
 </script>

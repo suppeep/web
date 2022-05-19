@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed } from 'vue'
 
 export default {
   props: {
@@ -20,13 +20,13 @@ export default {
   },
   setup(props) {
     const classStringToArray = computed(() => {
-      if (props.extClass === undefined) return;
-      else {
-        return props.extClass.split(" ").map((style) => style);
-      }
-    });
+      if (props.extClass === undefined)
+        return []
+      else
+        return props.extClass.split(' ').map(style => style)
+    })
 
-    return { classStringToArray };
+    return { classStringToArray }
   },
-};
+}
 </script>

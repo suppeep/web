@@ -1,6 +1,5 @@
 <template>
   <button
-    @click="action"
     class="
       hover:bg-indigo-500
       font-normal
@@ -16,6 +15,7 @@
       text-sm
       cursor-none
     "
+    @click="action"
   >
     {{ text }}
   </button>
@@ -33,5 +33,5 @@ export default {
       required: false,
     },
   },
-};
+}
 </script>

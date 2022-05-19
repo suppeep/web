@@ -1,7 +1,7 @@
 <template>
   <div
-    class="pt-[5%] px-[8%] md:px-[12%] flex flex-col relative h-full"
     id="eve"
+    class="pt-[5%] px-[8%] md:px-[12%] flex flex-col relative h-full"
   >
     <div class="text-left font-bold text-5xl md:text-6xl relative">
       <div
@@ -30,14 +30,14 @@
         "
       >
         <Highlighter
-          highlightClassName="gradient-red"
-          :searchWords="keywords"
-          :autoEscape="true"
-          :textToHighlight="personalText.text[0]"
+          highlight-class-name="gradient-red"
+          :search-words="keywords"
+          :auto-escape="true"
+          :text-to-highlight="personalText.text[0]"
         />
       </p>
 
-      <Text
+      <ContentText
         id="personal-subtext-1"
         class="px-[1%] w-full"
         :text="personalText.text[1]"
@@ -45,6 +45,7 @@
     </div>
 
     <div
+      id="personal-images"
       class="
         bg-transparent
         flex-col
@@ -54,14 +55,13 @@
         md:translate-y-[400px]
         space-y-2
       "
-      id="personal-images"
     >
       <div class="w-full md:w-1/3 grid place-items-center">
         <img
           src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
           alt="tailwind logo"
           class="rounded-xl"
-        />
+        >
       </div>
       <div
         class="
@@ -76,67 +76,65 @@
           src="../../assets/images/lukas_kreutzer.jpg"
           alt="tailwind logo"
           class="rounded-xl sepia"
-        />
+        >
       </div>
       <div class="w-full md:w-1/3 grid place-items-center">
         <img
           src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
           alt="tailwind logo"
           class="rounded-xl"
-        />
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { ref, defineComponent, onMounted } from "vue";
-import Highlighter from "vue-highlight-words";
+import { computed, defineComponent, onMounted, ref } from 'vue'
+import Highlighter from 'vue-highlight-words'
 
-import Text from "../atom/text.vue";
-import ImageHolder from "../atom/imageHolder.vue";
+import ContentText from '../atom/text.vue'
 
 // composition modules
-import io from "../../modules/io";
-import timeline from "../../modules/gsap/timeline";
+import io from '../../modules/io'
+import timeline from '../../modules/gsap/timeline'
 
 // text
-import pageText from "../../text/index.json";
-import { computed } from "@vue/reactivity";
+import pageText from '../../text/index.json'
 
 export default defineComponent({
-  components: { ImageHolder, Text, Highlighter },
+  components: { ContentText, Highlighter },
   setup() {
-    const { jsonReader } = io();
-    const { createTimeline } = timeline();
+    const { jsonReader } = io()
+    const { createTimeline } = timeline()
 
-    const personalText = ref(jsonReader(pageText).personal);
+    const personalText = ref(jsonReader(pageText).personal)
 
     const keywords = computed(() => {
-      return ["$Code", "$Design", "$Teamwork"];
-    });
+      return ['$Code', '$Design', '$Teamwork']
+    })
 
     onMounted(() => {
       if (window.screen.width > 768) {
         const options = {
-          start: "top 85%",
-          end: "top 10%",
+          start: 'top 85%',
+          end: 'top 10%',
           scrub: 0.3,
-        };
+        }
 
-        const tl = createTimeline("#personal", options);
+        const tl = createTimeline('#personal', options)
 
-        tl.to("#eve", {
+        tl.to('#eve', {
           y: -420,
-        });
+        })
 
-        tl.to("#personal-images", {
+        tl.to('#personal-images', {
           y: -120,
-        });
+        })
       }
-    });
+    })
 
-    return { personalText, keywords };
+    return { personalText, keywords }
   },
-});
+})
 </script>

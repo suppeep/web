@@ -1,59 +1,58 @@
 <template>
   <section class="relative h-full md:h-screen circle-opener">
     <div
-      @click="generateGradient"
       class="circle"
       style="z-index: 9999"
       :style="{ background: gradient }"
-    ></div>
+      @click="generateGradient"
+    />
 
     <div>
-      <slot name="content"></slot>
+      <slot name="content" />
     </div>
   </section>
 </template>
 
 <script>
-import { ref, computed } from "vue";
+import { computed, ref } from 'vue'
 
 export default {
   setup() {
-    const colors = ref([{ hex: "" }, { hex: "" }]);
+    const colors = ref([{ hex: '' }, { hex: '' }])
 
     const randomColors = [
-      "#ff0000",
-      "#ff7f00",
-      "#ffff00",
-      "#00ff00",
-      "#00ffff",
-      "#0000ff",
-      "#8b00ff",
-      "#ff00ff",
-    ];
+      '#ff0000',
+      '#ff7f00',
+      '#ffff00',
+      '#00ff00',
+      '#00ffff',
+      '#0000ff',
+      '#8b00ff',
+      '#ff00ff',
+    ]
 
     const randomHex = () => {
-      return randomColors[Math.floor(Math.random() * randomColors.length)];
-    };
+      return randomColors[Math.floor(Math.random() * randomColors.length)]
+    }
 
     const generateGradient = () => {
-      for (let i = 0; i < colors.value.length; i++) {
-        colors.value[i].hex = randomHex();
-      }
-    };
+      for (let i = 0; i < colors.value.length; i++)
+        colors.value[i].hex = randomHex()
+    }
 
     const gradient = computed(() => {
-      let color = "linear-gradient(45deg";
+      let color = 'linear-gradient(45deg'
 
-      colors.value.forEach(function (e) {
-        color += "," + e.hex;
-      });
-      color += ")";
-      return color;
-    });
+      colors.value.forEach((e) => {
+        color += `,${e.hex}`
+      })
+      color += ')'
+      return color
+    })
 
-    return { generateGradient, gradient };
+    return { generateGradient, gradient }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

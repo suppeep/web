@@ -1,21 +1,20 @@
 <template>
   <div class="flex flex-col relative pt-[10%]">
     <div class="px-[8%] md:px-[12%] text-left font-bold text-5xl md:text-6xl relative">
-      <Title
+      <ContentTitle
         v-for="(text, index) in workText.title"
         :id="`work-text-${index}`"
         :key="`work-text-${index}`"
         class="gradient-red my-1.5"
         :text="text"
-      >
-      </Title>
+      />
     </div>
 
     <div class="flex flex-col justify-center overflow-hidden">
       <div class="pt-6 flex justify-center">
-        <Text
+        <ContentText
           text="Around the world, on three continents, Lukas is well known by companies for his work and understanding to create the most powerful solutions and to keep teams on the right track."
-          :extClass="['text-gray-500', 'w-full', 'md:w-1/2', 'p-3']"
+          :ext-class="['text-gray-500', 'w-full', 'md:w-1/2', 'p-3']"
         />
       </div>
 
@@ -31,40 +30,40 @@
 
       <div class="flex justify-center w-full">
         <canvas
-          class="text-center w-[500px] h-[500px]"
           id="cobe"
+          class="text-center w-[500px] h-[500px]"
           width="1000"
           height="1000"
-        ></canvas>
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import createGlobe from "cobe";
-import { ref, defineComponent, onMounted } from "vue";
+import createGlobe from 'cobe'
+import { defineComponent, onMounted, ref } from 'vue'
 
-import Title from "../atom/title.vue";
-import Text from "../atom/text.vue";
+import ContentTitle from '../atom/title.vue'
+import ContentText from '../atom/text.vue'
 
 // composition modules
-import io from "../../modules/io";
+import io from '../../modules/io'
 
 // text
-import pageText from "../../text/index.json";
+import pageText from '../../text/index.json'
 
 export default defineComponent({
-  components: { Title, Text },
+  components: { ContentTitle, ContentText },
   setup() {
-    const { jsonReader } = io();
+    const { jsonReader } = io()
 
-    const workText = ref(jsonReader(pageText).work);
-    const countries = ref(workText.value.countries);
+    const workText = ref(jsonReader(pageText).work)
+    const countries = ref(workText.value.countries)
 
     onMounted(() => {
-      let phi = 0;
-      let canvas = document.getElementById("cobe");
+      let phi = 0
+      const canvas = document.getElementById('cobe')
 
       const globe = createGlobe(canvas, {
         devicePixelRatio: 2,
@@ -89,15 +88,14 @@ export default defineComponent({
           { location: [38.458823, -87.288317], size: 0.08 },
         ],
         onRender: (state) => {
-          state.phi = phi;
-          phi += 0.002;
+          state.phi = phi
+          phi += 0.002
         },
-      });
-    });
+      })
+    })
 
-    return { workText, countries };
+    return { workText, countries }
   },
-});
+})
 </script>
-
 
