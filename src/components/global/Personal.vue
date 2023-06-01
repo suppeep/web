@@ -80,7 +80,7 @@
       </div>
       <div class="w-full md:w-1/3 grid place-items-center">
         <img
-          src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          src="../../assets/images/landscape.jpeg"
           alt="tailwind logo"
           class="rounded-xl"
         >
